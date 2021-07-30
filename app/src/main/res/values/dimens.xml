@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_parent_padding">16dp</dimen>
+    <dimen name="album_rv_top_margin">16dp</dimen>
+    <dimen name="album_text_padding">6dp</dimen>
+    <dimen name="album_cv_elevation">2dp</dimen>
+    <dimen name="album_cv_corner_radius">4dp</dimen>
+    <dimen name="album_cv_margin">8dp</dimen>
+</resources>

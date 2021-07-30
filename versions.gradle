@@ -1,0 +1,110 @@
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+versions.timber = "4.7.1"
+versions.chucker = "3.0.1"
+
+versions.material = "1.4.0"
+
+versions.kotlin = "1.3.0"
+versions.coroutines = "1.4.1"
+versions.retrofit = "2.8.1"
+versions.http_logging_interceptor = "4.9.1"
+versions.navigation = "2.3.5"
+
+versions.core_ktx = "1.6.0"
+versions.fragment_ktx = "1.3.6"
+versions.room = "2.3.0"
+versions.constraint_layout = "2.0.4"
+versions.lifecycle_version = "2.3.1"
+versions.dagger_hilt_viewmodel = "1.0.0-alpha03"
+versions.dagger_hilt = "2.35"
+
+def deps = [:]
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:${versions.support}"
+androidx.material = "com.google.android.material:material:${versions.material}"
+androidx.constraint_layout = "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
+deps.androidx = androidx
+
+def ktx = [:]
+ktx.core_ktx = "androidx.core:core-ktx:${versions.core_ktx}"
+ktx.fragment_ktx = "androidx.fragment:fragment-ktx:${versions.fragment_ktx}"
+ktx.lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle_version}"
+androidx.ktx = ktx
+
+def room = [:]
+room.room_ktx =  "androidx.room:room-ktx:${versions.room}"// kotlin extension and coroutine use of room
+room.runtime =  "androidx.room:room-runtime:${versions.room}"
+room.compiler =  "androidx.room:room-compiler:${versions.room}"
+androidx.room = room
+
+def retrofit = [:]
+retrofit.retrofit2 = "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+retrofit.retrofit_converter = "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+retrofit.http_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${versions.http_logging_interceptor}"
+deps.retrofit = retrofit
+
+def navigation = [:]
+navigation.navigation_fragment = "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+navigation.navigation_ui = "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+androidx.navigation = navigation
+
+def dagger = [:]
+dagger.hilt_android = "com.google.dagger:hilt-android:${versions.dagger_hilt}"
+dagger.hilt_compiler = "com.google.dagger:hilt-compiler:${versions.dagger_hilt}"
+deps.dagger = dagger
+
+//androidx.hilt_lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${versions.dagger_hilt_viewmodel}"
+
+def kotlin = [:]
+//kotlin.koin_android = "io.insert-koin:koin-android:${versions.koin_android_version}"
+//kotlin.koin_viewmodel = "io.insert-koin:koin-android-viewmodel:${versions.koin_android_version}"
+deps.kotlin = kotlin
+
+deps.timber = "com.jakewharton.timber:timber:${versions.timber}"
+deps.chucker_debug = "com.github.ChuckerTeam.Chucker:library:${versions.chucker}"
+deps.chucker_release = "com.github.chuckerteam.chucker:library-no-op:${versions.chucker}"
+
+def coroutines = [:]
+coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+kotlin.coroutines = coroutines
+
+
+
+
+//deps.file_tree =  fileTree(include: ['*.jar'], dir: 'libs')
+
+ext.deps = deps
+
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.compile_sdk = 28
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.2"
+ext.build_versions = build_versions
+
+//def addRepos(RepositoryHandler handler) {
+//    handler.google()
+//    handler.mavenCentral()
+//    handler.jcenter()
+//    handler.maven { url "http://nexus.bsbportal.com/nexus/content/repositories/releases" }
+//    handler.maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+//    handler.maven { url "https://jitpack.io" }
+//    handler.maven {
+//        url "https://maven.google.com"
+//    }
+//    handler.maven {
+//        url "https://mvnrepository.com/artifact/org.apache.commons/commons-lang3"
+//    }
+//    handler.maven {
+//        url "'https://maven.fabric.io/public'"
+//    }
+//}
+//
+//ext.addRepos = this.&addRepos
+//ext.addLibraryConfig = this.&addLibraryConfig
