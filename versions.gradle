@@ -22,6 +22,7 @@ versions.constraint_layout = "2.0.4"
 versions.lifecycle_version = "2.3.1"
 versions.dagger_hilt_viewmodel = "1.0.0-alpha03"
 versions.dagger_hilt = "2.35"
+versions.card_view = "1.0.0"
 
 def deps = [:]
 
@@ -29,6 +30,8 @@ def androidx = [:]
 androidx.appcompat = "androidx.appcompat:appcompat:${versions.support}"
 androidx.material = "com.google.android.material:material:${versions.material}"
 androidx.constraint_layout = "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
+androidx.card_view = "androidx.cardview:cardview:${versions.card_view}"
+
 deps.androidx = androidx
 
 def ktx = [:]
@@ -59,11 +62,7 @@ dagger.hilt_android = "com.google.dagger:hilt-android:${versions.dagger_hilt}"
 dagger.hilt_compiler = "com.google.dagger:hilt-compiler:${versions.dagger_hilt}"
 deps.dagger = dagger
 
-//androidx.hilt_lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${versions.dagger_hilt_viewmodel}"
-
 def kotlin = [:]
-//kotlin.koin_android = "io.insert-koin:koin-android:${versions.koin_android_version}"
-//kotlin.koin_viewmodel = "io.insert-koin:koin-android-viewmodel:${versions.koin_android_version}"
 deps.kotlin = kotlin
 
 deps.timber = "com.jakewharton.timber:timber:${versions.timber}"
@@ -74,11 +73,6 @@ def coroutines = [:]
 coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 kotlin.coroutines = coroutines
 
-
-
-
-//deps.file_tree =  fileTree(include: ['*.jar'], dir: 'libs')
-
 ext.deps = deps
 
 def build_versions = [:]
@@ -87,24 +81,3 @@ build_versions.compile_sdk = 28
 build_versions.target_sdk = 28
 build_versions.build_tools = "28.0.2"
 ext.build_versions = build_versions
-
-//def addRepos(RepositoryHandler handler) {
-//    handler.google()
-//    handler.mavenCentral()
-//    handler.jcenter()
-//    handler.maven { url "http://nexus.bsbportal.com/nexus/content/repositories/releases" }
-//    handler.maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-//    handler.maven { url "https://jitpack.io" }
-//    handler.maven {
-//        url "https://maven.google.com"
-//    }
-//    handler.maven {
-//        url "https://mvnrepository.com/artifact/org.apache.commons/commons-lang3"
-//    }
-//    handler.maven {
-//        url "'https://maven.fabric.io/public'"
-//    }
-//}
-//
-//ext.addRepos = this.&addRepos
-//ext.addLibraryConfig = this.&addLibraryConfig
