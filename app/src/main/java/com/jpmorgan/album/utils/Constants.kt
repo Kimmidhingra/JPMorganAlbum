@@ -5,7 +5,6 @@ object NetworkConstants {
     const val READ_TIME_OUT_IN_SECS = 90L
     const val WRITE_TIME_OUT_IN_SECS = 90L
     const val CONNECTION_TIME_OUT_IN_SECS = 90L
-//    albums
 }
 object DatabaseConstants{
     const val DATABASE_NAME = "ALBUM_DB"

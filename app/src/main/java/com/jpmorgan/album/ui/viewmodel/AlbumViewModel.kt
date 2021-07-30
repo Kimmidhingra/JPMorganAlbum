@@ -1,8 +1,5 @@
 package com.jpmorgan.album.ui.viewmodel
 
-import android.util.Log
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

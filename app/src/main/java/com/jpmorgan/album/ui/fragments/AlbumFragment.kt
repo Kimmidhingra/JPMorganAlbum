@@ -1,7 +1,6 @@
 package com.jpmorgan.album.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AlbumFragment : Fragment() {
     private lateinit var binding: FragmentAlbumBinding
-    private val TAG = "albumfragment"
 
     // lazy inject viewmodel
     val albumViewModel: AlbumViewModel by viewModels()
