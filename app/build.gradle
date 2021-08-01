@@ -27,7 +27,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-        debug{
+        debug {
             buildConfigField "String", 'BASE_URL', "\"https://jsonplaceholder.typicode.com/\""
             buildConfigField "boolean", 'LOGGIN_ENABLED', "true"
             minifyEnabled false
@@ -70,8 +70,12 @@ dependencies {
     implementation deps.dagger.hilt_android
     kapt deps.dagger.hilt_compiler
 
-    // test dependencies
-    testImplementation 'junit:junit:4.+'
+    // test dependencies for unit test case
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "com.google.truth:truth:1.1.3"
+    
+    // test dependencies for instrumentation test
+    androidTestImplementation "com.google.truth:truth:1.1.3"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

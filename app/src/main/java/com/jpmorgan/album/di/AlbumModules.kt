@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.jpmorgan.album.BuildConfig
 import com.jpmorgan.album.database.AlbumDatabase
+import com.jpmorgan.album.database.RoomMigration
 import com.jpmorgan.album.network.AlbumApi
 import com.jpmorgan.album.network.NetworkConnectionInterceptor
 import com.jpmorgan.album.utils.DatabaseConstants.DATABASE_NAME
@@ -69,5 +70,6 @@ object AlbumModules {
     @Singleton
     fun provideDatabase(app: Application): AlbumDatabase =
         Room.databaseBuilder(app, AlbumDatabase::class.java, DATABASE_NAME)
+            .addMigrations(RoomMigration.migration_1_2)
             .build()
 }

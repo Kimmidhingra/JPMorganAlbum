@@ -1,9 +1,10 @@
-package com.jpmorgan.album.data
+package com.jpmorgan.album.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.jpmorgan.album.data.Album
 import com.jpmorgan.album.utils.DatabaseConstants.TABLE_ALBUM_DETAIL
 import kotlinx.coroutines.flow.Flow
 
